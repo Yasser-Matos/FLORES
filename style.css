@@ -60,6 +60,7 @@ body {
     background: linear-gradient(135deg, #fde047 0%, #f97316 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text; /* Añadido para estandarizar */
     text-shadow: 0 5px 15px rgba(249, 115, 22, 0.3);
 }
 
@@ -113,6 +114,7 @@ body {
     background: linear-gradient(135deg, #fde047 0%, #f97316 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text; /* Añadido para estandarizar */
     margin-bottom: 10px;
 }
 
