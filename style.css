@@ -1,10 +1,7 @@
-/* Variables inspiradas en los tonos de la imagen de referencia */
+/* Variables de colores */
 :root {
-    --bg-primary-light: #2563eb; /* Azul cielo vibrante pero elegante para la primera página */
-    /* Degradado inspirado en la foto: Azul profundo arriba -> Celeste -> Destello dorado en el horizonte */
-    --bg-sky-gradient: linear-gradient(180deg, #1e3a8a 0%, #3b82f6 40%, #60a5fa 70%, #fef08a 100%); 
-    
-    --card-bg: rgba(15, 23, 42, 0.85); /* Tarjeta con efecto vidrio oscuro para que resalte el texto */
+    --bg-primary-light: #2563eb; 
+    --card-bg: rgba(15, 23, 42, 0.82); /* Tarjeta con efecto vidrio oscuro */
     --text-main: #ffffff;
     --text-muted: #e2e8f0;
     --accent-yellow: #fde047;
@@ -23,7 +20,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Estilo para la primera página (Fondo sólido azul cielo armónico) */
+/* Primera página (Fondo sólido azul cielo) */
 body.index-page {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-primary-light);
@@ -36,10 +33,12 @@ body.index-page {
     padding: 20px;
 }
 
-/* Estilo para la segunda página (Fondo inspirado en el paisaje de la foto) */
+/* Segunda página (Fondo con tu imagen real + capa oscura suave para contraste) */
 body.flores-page {
     font-family: 'Poppins', sans-serif;
-    background: var(--bg-sky-gradient);
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('paisaje.webp');
+    background-size: cover;
+    background-position: center;
     background-attachment: fixed;
     color: var(--text-main);
     display: flex;
@@ -152,7 +151,7 @@ body.flores-page {
     font-size: 1.1rem;
 }
 
-/* Lluvia Masiva de Flores Amarillas (Muchísimas más flores distribuidas por toda la pantalla) */
+/* Lluvia Masiva de Flores Amarillas sobre la imagen */
 .flowers-container {
     position: fixed;
     top: 0;
