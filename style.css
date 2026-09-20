@@ -23,8 +23,10 @@ html {
 /* Primera página (Fondo sólido azul cielo) */
 body.index-page {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-primary-light);
-    background-image: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('imagen.jpg.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: var(--text-main);
     display: flex;
     justify-content: center;
@@ -36,7 +38,7 @@ body.index-page {
 /* Segunda página (Fondo con tu imagen real + capa oscura suave para contraste) */
 body.flores-page {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('imagen.jpg.webp');
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('ramo-girasoles.jpg.');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
