@@ -1,13 +1,16 @@
-/* Variables de colores vibrantes para la temática de flores amarillas */
+/* Variables inspiradas en los tonos de la imagen de referencia */
 :root {
-    --bg-gradient: linear-gradient(135deg, #1a1c29 0%, #2e1a47 50%, #3a1c38 100%);
-    --card-bg: rgba(30, 41, 59, 0.85);
+    --bg-primary-light: #2563eb; /* Azul cielo vibrante pero elegante para la primera página */
+    /* Degradado inspirado en la foto: Azul profundo arriba -> Celeste -> Destello dorado en el horizonte */
+    --bg-sky-gradient: linear-gradient(180deg, #1e3a8a 0%, #3b82f6 40%, #60a5fa 70%, #fef08a 100%); 
+    
+    --card-bg: rgba(15, 23, 42, 0.85); /* Tarjeta con efecto vidrio oscuro para que resalte el texto */
     --text-main: #ffffff;
-    --text-muted: #cbd5e1;
+    --text-muted: #e2e8f0;
     --accent-yellow: #fde047;
-    --accent-orange: #f97316;
-    --btn-gradient: linear-gradient(135deg, #facc15 0%, #f97316 100%);
-    --btn-hover: linear-gradient(135deg, #fde047 0%, #ea580c 100%);
+    --accent-orange: #f59e0b;
+    --btn-gradient: linear-gradient(135deg, #facc15 0%, #f59e0b 100%);
+    --btn-hover: linear-gradient(135deg, #fde047 0%, #d97706 100%);
 }
 
 * {
@@ -20,10 +23,11 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
+/* Estilo para la primera página (Fondo sólido azul cielo armónico) */
+body.index-page {
     font-family: 'Poppins', sans-serif;
-    background: var(--bg-gradient);
-    background-attachment: fixed;
+    background-color: var(--bg-primary-light);
+    background-image: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
     color: var(--text-main);
     display: flex;
     justify-content: center;
@@ -32,20 +36,35 @@ body {
     padding: 20px;
 }
 
+/* Estilo para la segunda página (Fondo inspirado en el paisaje de la foto) */
+body.flores-page {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-sky-gradient);
+    background-attachment: fixed;
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
 .container {
     width: 100%;
     max-width: 700px;
 }
 
-/* Sección de Bienvenida estilizada tipo tarjeta flotante con cristal */
+/* Sección de Bienvenida */
 .welcome-section {
     text-align: center;
     padding: 60px 30px;
     background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 24px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
     margin-bottom: 50px;
     min-height: 60vh;
     display: flex;
@@ -57,11 +76,11 @@ body {
 .welcome-section h1 {
     font-size: 2.8rem;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, #fde047 0%, #f97316 100%);
+    background: linear-gradient(135deg, #fde047 0%, #f59e0b 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text; /* Añadido para estandarizar */
-    text-shadow: 0 5px 15px rgba(249, 115, 22, 0.3);
+    background-clip: text;
+    text-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
 }
 
 .welcome-section p {
@@ -72,18 +91,18 @@ body {
     line-height: 1.7;
 }
 
-/* Botones coloridos con efecto brillante y sombra */
+/* Botones coloridos */
 .btn-more {
     display: inline-block;
     padding: 15px 35px;
     background: var(--btn-gradient);
-    color: #1a1c29;
+    color: #0f172a;
     text-decoration: none;
     font-weight: 700;
     font-size: 1.05rem;
     border-radius: 50px;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
     border: none;
     cursor: pointer;
 }
@@ -98,30 +117,30 @@ body {
     transform: translateY(-1px);
 }
 
-/* Sección de contenido secundario (Flores / Sobre Mí) */
+/* Sección de contenido secundario */
 .about-section {
     background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 45px;
     border-radius: 24px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
     margin-bottom: 50px;
 }
 
 .about-section h2 {
     font-size: 2.2rem;
-    background: linear-gradient(135deg, #fde047 0%, #f97316 100%);
+    background: linear-gradient(135deg, #fde047 0%, #f59e0b 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text; /* Añadido para estandarizar */
+    background-clip: text;
     margin-bottom: 10px;
 }
 
 .divider {
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #fde047, #f97316);
+    background: linear-gradient(90deg, #fde047, #f59e0b);
     border-radius: 2px;
     margin-bottom: 25px;
 }
@@ -133,35 +152,7 @@ body {
     font-size: 1.1rem;
 }
 
-/* Estilos de listas coloridas (Intereses y Valores) */
-.interests-list, .valores-list {
-    list-style: none;
-    margin-bottom: 25px;
-}
-
-.interests-list li, .valores-list li {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 14px 22px;
-    border-radius: 12px;
-    margin-bottom: 12px;
-    color: var(--text-main);
-    font-weight: 500;
-    border-left: 5px solid var(--accent-yellow);
-    transition: background 0.3s, transform 0.2s;
-}
-
-.interests-list li:hover, .valores-list li:hover {
-    background: rgba(253, 224, 71, 0.08);
-    transform: translateX(5px);
-}
-
-/* Animación de las flores flotantes */
-.flores-page {
-    position: relative;
-    overflow-x: hidden;
-}
-
+/* Lluvia Masiva de Flores Amarillas (Muchísimas más flores distribuidas por toda la pantalla) */
 .flowers-container {
     position: fixed;
     top: 0;
@@ -175,10 +166,10 @@ body {
 .flower {
     position: absolute;
     top: -10%;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     animation: floatDown linear infinite;
-    opacity: 0.85;
-    filter: drop-shadow(0 0 8px rgba(253, 224, 71, 0.4));
+    opacity: 0.95;
+    filter: drop-shadow(0 0 10px rgba(253, 224, 71, 0.8));
 }
 
 @keyframes floatDown {
@@ -186,11 +177,11 @@ body {
         transform: translateY(-10vh) rotate(0deg);
         opacity: 0;
     }
-    15% {
-        opacity: 0.9;
+    10% {
+        opacity: 1;
     }
-    85% {
-        opacity: 0.9;
+    90% {
+        opacity: 1;
     }
     100% {
         transform: translateY(110vh) rotate(360deg);
