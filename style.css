@@ -38,9 +38,9 @@ body.index-page {
 /* Segunda página (Fondo con tu imagen real + capa oscura suave para contraste) */
 body.flores-page {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('ramo-girasoles.jpg.');
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('ramo-girasoles.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center
     background-attachment: fixed;
     color: var(--text-main);
     display: flex;
