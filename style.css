@@ -55,8 +55,8 @@ body.flores-page {
     /* Fondo del ramo de girasoles con capa oscura suave para legibilidad */
     background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('ramo-girasoles.jpg');
     
-    /* Tamaño de la imagen de fondo (85% para apreciar el ramo completo) */
-    background-size: 85% auto; 
+    /* Tamaño de la imagen de fondo (100% para apreciar el ramo completo) */
+    background-size: 100% auto; 
     background-repeat: no-repeat;
     background-position: center bottom; /* Anclado hacia abajo para que el ramo luzca */
     background-attachment: fixed;
@@ -64,7 +64,7 @@ body.flores-page {
     
     /* Control de posición de la tarjeta en computadoras */
     display: flex;
-    justify-content: center; /* Centra la tarjeta horizontalmente */
+    justify-content: normal; /* Centra la tarjeta horizontalmente */
     align-items: flex-start;   /* Mantiene el contenido hacia arriba */
     
     min-height: 100vh;
