@@ -1,4 +1,6 @@
-/* Variables de colores */
+/* ==========================================================
+   VARIABLES DE DISEÑO (Colores y efectos generales)
+   ========================================================== */
 :root {
     --bg-primary-light: #2563eb; 
     --card-bg: rgba(15, 23, 42, 0.88); /* Tarjeta con efecto vidrio oscuro elegante */
@@ -20,13 +22,17 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Primera página (Fondo sólido azul cielo) */
+/* ==========================================================
+   1. PRIMERA PÁGINA (INDEX.HTML)
+   Modifica aquí el fondo si deseas que la primera página luzca diferente.
+   ========================================================== */
 body.index-page {
     font-family: 'Poppins', sans-serif;
-     background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('imagen.jpg.webp');
-    background-size: 85% auto; /* Muestra más la imagen de fondo para apreciar el ramo */
+    /* Capa de oscurecimiento + tu imagen de fondo para la primera página */
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('imagen.jpg.webp');
+    background-size: 85% auto; /* Muestra parte de la imagen de fondo */
     background-repeat: no-repeat;
-    background-position: center bottom; /* Anclado hacia abajo para que el ramo luzca */
+    background-position: center bottom; /* Anclado hacia abajo */
     background-attachment: fixed;
     color: var(--text-main);
     display: flex;
@@ -36,31 +42,42 @@ body.index-page {
     padding: 20px;
 }
 
-/* Segunda página: Imagen ajustada para que se vea el ramo y diseño adaptado */
+/* ==========================================================
+   2. SEGUNDA PÁGINA (FLORES.HTML)
+   Aquí configuras cómo se ve el fondo con el ramo y la posición de la tarjeta.
+   ========================================================== */
 body.flores-page {
     font-family: 'Poppins', sans-serif;
-    /* Capa oscura muy ligera para mantener legibilidad sin opacar el ramo */
+    /* Capa oscura muy ligera para mantener la legibilidad sin tapar el ramo */
     background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('ramo-girasoles.jpg');
-    background-size: 85% auto; /* Muestra más la imagen de fondo para apreciar el ramo */
+    background-size: 90% auto; /* Ajusta este porcentaje si quieres hacer la imagen más grande o pequeña */
     background-repeat: no-repeat;
-    background-position: center bottom; /* Anclado hacia abajo para que el ramo luzca */
+    background-position: center bottom; /* Mueve hacia dónde enfoca la imagen del ramo */
     background-attachment: fixed;
     color: var(--text-main);
-    display: flex;
-    justify-content: flex-end; /* Mueve el contenido hacia la derecha */
-    align-items: flex-start;   /* Mueve el contenido hacia arriba */
-    min-height: 100vh;
-    padding: 40px;
-    position: relative;
-    overflow-x: hidden;
-}
+    
+    .about-section 
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+    
+    /* MODIFICACIÓN MANUAL: Cambia este valor de '0px' a por ejemplo '-30px' o '-50px' para correrla hacia la izquierda manualmente */
+    margin-right: -10px; 
 
-.container {
+
+/* Contenedor principal que limita el ancho de la tarjeta */
+.container 
     width: 100%;
-    max-width: 550px; /* Un poco más compacta para la esquina superior */
+    max-width: 250px; /* Ancho máximo de la tarjeta (hazlo más pequeño si quieres que cubra menos fondo) */
 }
 
-/* Sección de Bienvenida */
+/* ==========================================================
+   3. SECCIÓN DE BIENVENIDA (Tarjeta de la primera página)
+   ========================================================== */
 .welcome-section {
     text-align: center;
     padding: 60px 30px;
@@ -95,7 +112,9 @@ body.flores-page {
     line-height: 1.7;
 }
 
-/* Botones coloridos */
+/* ==========================================================
+   4. ESTILOS DE LOS BOTONES
+   ========================================================== */
 .btn-more {
     display: inline-block;
     padding: 15px 35px;
@@ -121,7 +140,9 @@ body.flores-page {
     transform: translateY(-1px);
 }
 
-/* Sección de contenido secundario (Movida hacia arriba a la derecha) */
+/* ==========================================================
+   5. SECCIÓN DE CONTENIDO SECUNDARIO (Tarjeta de la segunda página)
+   ========================================================== */
 .about-section {
     background: var(--card-bg);
     backdrop-filter: blur(12px);
@@ -157,7 +178,9 @@ body.flores-page {
     font-size: 1rem;
 }
 
-/* Lluvia de Flores Amarillas */
+/* ==========================================================
+   6. ANIMACIÓN DE LA LLUVIA DE FLORES AMARILLAS
+   ========================================================== */
 .flowers-container {
     position: fixed;
     top: 0;
@@ -170,8 +193,8 @@ body.flores-page {
 
 .flower {
     position: absolute;
-    top: -10%;
-    font-size: 1.8rem;
+    top: -15%;
+    font-size: 2.5rem;
     animation: floatDown linear infinite;
     opacity: 0.95;
     filter: drop-shadow(0 0 10px rgba(253, 224, 71, 0.8));
