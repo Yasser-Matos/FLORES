@@ -6,7 +6,7 @@
     
     /* OPACIDAD DE LAS TARJETAS: El '0.35' controla qué tan transparente es el fondo de la tarjeta. 
        Bájalo (ej: 0.2) para ver más el ramo, o súbelo (ej: 0.5) para verla más sólida. */
-    --card-bg: rgba(15, 23, 42, 0.15); 
+    --card-bg: rgba(15, 23, 42, 0.10); 
     
     --text-main: #ffffff;
     --text-muted: #e2e8f0;
@@ -248,7 +248,7 @@ body.flores-page {
     }
 
     .profile-content p {
-        font-size: 0.9rem; /* Texto más compacto para celulares */
+        font-size: 0.6rem; /* Texto más compacto para celulares */
         margin-bottom: 10px;
     }
 
