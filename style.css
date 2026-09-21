@@ -56,7 +56,7 @@ body.flores-page {
     background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('ramo-girasoles.jpg');
     
     /* Tamaño de la imagen de fondo (100% para apreciar el ramo completo) */
-    background-size: 100% auto; 
+    background-size: 85% auto; 
     background-repeat: no-repeat;
     background-position: flex-end; /* aca puedes mover la altura y lugar de imagen de fondo*/
     background-attachment: fixed;
