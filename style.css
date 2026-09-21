@@ -58,14 +58,14 @@ body.flores-page {
     /* Tamaño de la imagen de fondo (100% para apreciar el ramo completo) */
     background-size: 100% auto; 
     background-repeat: no-repeat;
-    background-position: center bottom; /* Anclado hacia abajo para que el ramo luzca */
+    background-position: flex-end; /* aca puedes mover la altura y lugar de imagen de fondo*/
     background-attachment: fixed;
     color: var(--text-main);
     
     /* Control de posición de la tarjeta en computadoras */
     display: flex;
-    justify-content: normal; /* Centra la tarjeta horizontalmente */
-    align-items: flex-start;   /* Mantiene el contenido hacia arriba */
+    justify-content: flex-end; /* Centra la tarjeta horizontalmente o como quieras */
+    align-items: flex-start;   /* Mantiene el contenido hacia arriba o como quieras*/
     
     min-height: 100vh;
     padding: 40px;
