@@ -56,16 +56,16 @@ body.flores-page {
     background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('ramo-girasoles.jpg');
     
     /* Tamaño de la imagen de fondo (100% para apreciar el ramo completo) */
-    background-size: 85% auto; 
+    background-size: 80% auto; 
     background-repeat: no-repeat;
-    background-position: flex-end; /* aca puedes mover la altura y lugar de imagen de fondo*/
+    background-position: flex-start; /* aca puedes mover la altura y lugar de imagen de fondo*/
     background-attachment: fixed;
     color: var(--text-main);
     
     /* Control de posición de la tarjeta en computadoras */
     display: flex;
-    justify-content: flex-end; /* Centra la tarjeta horizontalmente o como quieras */
-    align-items: flex-start;   /* Mantiene el contenido hacia arriba o como quieras*/
+    justify-content: normal; /* Centra la tarjeta horizontalmente o como quieras */
+    align-items: normal;   /* Mantiene el contenido hacia arriba o como quieras*/
     
     min-height: 100vh;
     padding: 40px;
