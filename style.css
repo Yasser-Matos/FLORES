@@ -3,7 +3,7 @@
    ========================================================== */
 :root {
     --bg-primary-light: #2563eb; 
-    --card-bg: rgba(15, 23, 42, 0.88); /* Tarjeta con efecto vidrio oscuro elegante */
+    --card-bg: rgba(15, 23, 42, 0.9); /* Tarjeta con efecto vidrio oscuro */
     --text-main: #ffffff;
     --text-muted: #e2e8f0;
     --accent-yellow: #fde047;
@@ -24,15 +24,13 @@ html {
 
 /* ==========================================================
    1. PRIMERA PÁGINA (INDEX.HTML)
-   Modifica aquí el fondo si deseas que la primera página luzca diferente.
    ========================================================== */
 body.index-page {
     font-family: 'Poppins', sans-serif;
-    /* Capa de oscurecimiento + tu imagen de fondo para la primera página */
     background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('imagen.jpg.webp');
-    background-size: 85% auto; /* Muestra parte de la imagen de fondo */
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center bottom; /* Anclado hacia abajo */
+    background-position: center;
     background-attachment: fixed;
     color: var(--text-main);
     display: flex;
@@ -43,41 +41,31 @@ body.index-page {
 }
 
 /* ==========================================================
-   2. SEGUNDA PÁGINA (FLORES.HTML)
-   Aquí configuras cómo se ve el fondo con el ramo y la posición de la tarjeta.
+   2. SEGUNDA PÁGINA (FLORES.HTML) - VISTA DE COMPUTADORA
    ========================================================== */
 body.flores-page {
     font-family: 'Poppins', sans-serif;
-    /* Capa oscura muy ligera para mantener la legibilidad sin tapar el ramo */
     background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('ramo-girasoles.jpg');
-    background-size: 90% auto; /* Ajusta este porcentaje si quieres hacer la imagen más grande o pequeña */
+    background-size: 85% auto; 
     background-repeat: no-repeat;
-    background-position: center bottom; /* Mueve hacia dónde enfoca la imagen del ramo */
+    background-position: center bottom; 
     background-attachment: fixed;
     color: var(--text-main);
-    
-    .about-section 
-    background: var(--card-bg);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 35px;
-    border-radius: 24px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-    margin-top: 10px;
-    
-    /* MODIFICACIÓN MANUAL: Cambia este valor de '0px' a por ejemplo '-30px' o '-50px' para correrla hacia la izquierda manualmente */
-    margin-right: -10px; 
-
-
-/* Contenedor principal que limita el ancho de la tarjeta */
-.container 
-    width: 100%;
-    max-width: 250px; /* Ancho máximo de la tarjeta (hazlo más pequeño si quieres que cubra menos fondo) */
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start;   
+    min-height: 100vh;
+    padding: 40px;
+    position: relative;
+    overflow-x: hidden;
 }
 
-/* ==========================================================
-   3. SECCIÓN DE BIENVENIDA (Tarjeta de la primera página)
-   ========================================================== */
+.container {
+    width: 100%;
+    max-width: 550px; 
+}
+
+/* Sección de Bienvenida */
 .welcome-section {
     text-align: center;
     padding: 60px 30px;
@@ -112,9 +100,7 @@ body.flores-page {
     line-height: 1.7;
 }
 
-/* ==========================================================
-   4. ESTILOS DE LOS BOTONES
-   ========================================================== */
+/* Botones coloridos */
 .btn-more {
     display: inline-block;
     padding: 15px 35px;
@@ -136,13 +122,7 @@ body.flores-page {
     box-shadow: 0 12px 30px rgba(253, 224, 71, 0.6);
 }
 
-.btn-more:active {
-    transform: translateY(-1px);
-}
-
-/* ==========================================================
-   5. SECCIÓN DE CONTENIDO SECUNDARIO (Tarjeta de la segunda página)
-   ========================================================== */
+/* Tarjeta de contenido secundario */
 .about-section {
     background: var(--card-bg);
     backdrop-filter: blur(12px);
@@ -151,7 +131,6 @@ body.flores-page {
     border-radius: 24px;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
     margin-top: 10px;
-    margin-right: 20px;
 }
 
 .about-section h2 {
@@ -178,9 +157,7 @@ body.flores-page {
     font-size: 1rem;
 }
 
-/* ==========================================================
-   6. ANIMACIÓN DE LA LLUVIA DE FLORES AMARILLAS
-   ========================================================== */
+/* Lluvia de Flores Amarillas */
 .flowers-container {
     position: fixed;
     top: 0;
@@ -193,8 +170,8 @@ body.flores-page {
 
 .flower {
     position: absolute;
-    top: -15%;
-    font-size: 2.5rem;
+    top: -10%;
+    font-size: 1.8rem;
     animation: floatDown linear infinite;
     opacity: 0.95;
     filter: drop-shadow(0 0 10px rgba(253, 224, 71, 0.8));
@@ -214,5 +191,39 @@ body.flores-page {
     100% {
         transform: translateY(110vh) rotate(360deg);
         opacity: 0;
+    }
+}
+
+
+/* ==========================================================
+   3. ADAPTACIÓN PARA TELÉFONOS (Pantallas menores a 768px)
+   ========================================================== */
+@media screen and (max-width: 768px) {
+    body.flores-page {
+        /* En celular hacemos que la imagen cubra bien la pantalla sin deformarse */
+        background-size: cover;
+        background-position: center top; 
+        align-items: flex-end; /* Manda la tarjeta hacia abajo para que el ramo luzca arriba */
+        padding: 15px;
+    }
+
+    .about-section {
+        padding: 20px; /* Reducimos el espacio interno para que sea más compacta */
+        margin-top: 0;
+        border-radius: 18px;
+    }
+
+    .about-section h2 {
+        font-size: 1.4rem; /* Título más pequeño y elegante para celulares */
+    }
+
+    .profile-content p {
+        font-size: 0.9rem; /* Texto más cómodo de leer en móvil */
+        margin-bottom: 10px;
+    }
+
+    .btn-more {
+        padding: 12px 25px;
+        font-size: 0.95rem;
     }
 }
