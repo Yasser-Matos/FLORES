@@ -1,9 +1,13 @@
 /* ==========================================================
-   VARIABLES DE DISEÑO (Colores y efectos generales)
+   1. VARIABLES DE DISEÑO (Colores, botones y opacidad general)
    ========================================================== */
 :root {
     --bg-primary-light: #2563eb; 
-    --card-bg: rgba(15, 23, 42, 0.9); /* Tarjeta con efecto vidrio oscuro */
+    
+    /* OPACIDAD DE LAS TARJETAS: El '0.35' controla qué tan transparente es el fondo de la tarjeta. 
+       Bájalo (ej: 0.2) para ver más el ramo, o súbelo (ej: 0.5) para verla más sólida. */
+    --card-bg: rgba(15, 23, 42, 0.15); 
+    
     --text-main: #ffffff;
     --text-muted: #e2e8f0;
     --accent-yellow: #fde047;
@@ -12,21 +16,24 @@
     --btn-hover: linear-gradient(135deg, #fde047 0%, #d97706 100%);
 }
 
+/* Restablece los márgenes y rellenos básicos de toda la página */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Hace que el desplazamiento entre enlaces sea suave */
 html {
     scroll-behavior: smooth;
 }
 
 /* ==========================================================
-   1. PRIMERA PÁGINA (INDEX.HTML)
+   2. ESTILOS DE LA PRIMERA PÁGINA (INDEX.HTML)
    ========================================================== */
 body.index-page {
     font-family: 'Poppins', sans-serif;
+    /* Imagen de fondo con una capa oscura muy ligera para la primera página */
     background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('imagen.jpg.webp');
     background-size: cover;
     background-repeat: no-repeat;
@@ -41,39 +48,49 @@ body.index-page {
 }
 
 /* ==========================================================
-   2. SEGUNDA PÁGINA (FLORES.HTML) - VISTA DE COMPUTADORA
+   3. ESTILOS DE LA SEGUNDA PÁGINA (FLORES.HTML - COMPUTADORAS)
    ========================================================== */
 body.flores-page {
     font-family: 'Poppins', sans-serif;
+    /* Fondo del ramo de girasoles con capa oscura suave para legibilidad */
     background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('ramo-girasoles.jpg');
+    
+    /* Tamaño de la imagen de fondo (85% para apreciar el ramo completo) */
     background-size: 85% auto; 
     background-repeat: no-repeat;
-    background-position: center bottom; 
+    background-position: center bottom; /* Anclado hacia abajo para que el ramo luzca */
     background-attachment: fixed;
     color: var(--text-main);
+    
+    /* Control de posición de la tarjeta en computadoras */
     display: flex;
-    justify-content: center; 
-    align-items: flex-start;   
+    justify-content: center; /* Centra la tarjeta horizontalmente */
+    align-items: flex-start;   /* Mantiene el contenido hacia arriba */
+    
     min-height: 100vh;
     padding: 40px;
     position: relative;
     overflow-x: hidden;
 }
 
+/* Controla el ancho máximo de la tarjeta de contenido */
 .container {
     width: 100%;
     max-width: 550px; 
 }
 
-/* Sección de Bienvenida */
+/* ==========================================================
+   4. TARJETA DE BIENVENIDA (Primera página)
+   ========================================================== */
 .welcome-section {
     text-align: center;
     padding: 60px 30px;
-    background: var(--card-bg);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: var(--card-bg); /* Aplica la transparencia de las variables */
+    backdrop-filter: blur(8px);    /* Efecto vidrio esmerilado borroso */
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.015); /* Borde sutil luminoso */
     border-radius: 24px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     margin-bottom: 50px;
     min-height: 60vh;
     display: flex;
@@ -82,6 +99,7 @@ body.flores-page {
     align-items: center;
 }
 
+/* Estilo del título principal de bienvenida */
 .welcome-section h1 {
     font-size: 2.8rem;
     margin-bottom: 20px;
@@ -92,6 +110,7 @@ body.flores-page {
     text-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
 }
 
+/* Estilo del texto descriptivo de bienvenida */
 .welcome-section p {
     font-size: 1.15rem;
     color: var(--text-muted);
@@ -100,11 +119,13 @@ body.flores-page {
     line-height: 1.7;
 }
 
-/* Botones coloridos */
+/* ==========================================================
+   5. DISEÑO DE LOS BOTONES
+   ========================================================== */
 .btn-more {
     display: inline-block;
     padding: 15px 35px;
-    background: var(--btn-gradient);
+    background: var(--btn-gradient); /* Degradado amarillo/naranja */
     color: #0f172a;
     text-decoration: none;
     font-weight: 700;
@@ -116,23 +137,28 @@ body.flores-page {
     cursor: pointer;
 }
 
+/* Efecto cuando pasas el mouse por encima del botón */
 .btn-more:hover {
     background: var(--btn-hover);
     transform: translateY(-4px) scale(1.03);
     box-shadow: 0 12px 30px rgba(253, 224, 71, 0.6);
 }
 
-/* Tarjeta de contenido secundario */
+/* ==========================================================
+   6. TARJETA DE CONTENIDO SECUNDARIO (Segunda página - Flores)
+   ========================================================== */
 .about-section {
-    background: var(--card-bg);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: var(--card-bg); /* Mantiene la transparencia estilo vidrio */
+    backdrop-filter: blur(8px);    /* Difumina lo que está detrás para leer con claridad */
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     padding: 35px;
     border-radius: 24px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     margin-top: 10px;
 }
 
+/* Título dentro de la tarjeta de flores */
 .about-section h2 {
     font-size: 2rem;
     background: linear-gradient(135deg, #fde047 0%, #f59e0b 100%);
@@ -142,6 +168,7 @@ body.flores-page {
     margin-bottom: 10px;
 }
 
+/* Línea decorativa debajo del título */
 .divider {
     width: 80px;
     height: 4px;
@@ -150,6 +177,7 @@ body.flores-page {
     margin-bottom: 20px;
 }
 
+/* Párrafos dentro de la tarjeta de flores */
 .profile-content p {
     color: var(--text-muted);
     line-height: 1.7;
@@ -157,17 +185,20 @@ body.flores-page {
     font-size: 1rem;
 }
 
-/* Lluvia de Flores Amarillas */
+/* ==========================================================
+   7. ANIMACIÓN DE LA LLUVIA DE FLORES CAYENDO
+   ========================================================== */
 .flowers-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
+    pointer-events: none; /* Evita que estorben al hacer clic */
     z-index: 1;
 }
 
+/* Estilo individual de cada icono de flor que cae */
 .flower {
     position: absolute;
     top: -10%;
@@ -177,6 +208,7 @@ body.flores-page {
     filter: drop-shadow(0 0 10px rgba(253, 224, 71, 0.8));
 }
 
+/* Movimiento de caída y rotación */
 @keyframes floatDown {
     0% {
         transform: translateY(-10vh) rotate(0deg);
@@ -194,31 +226,29 @@ body.flores-page {
     }
 }
 
-
 /* ==========================================================
-   3. ADAPTACIÓN PARA TELÉFONOS (Pantallas menores a 768px)
+   8. ADAPTACIÓN PARA TELÉFONOS MÓVILES (Pantallas menores a 768px)
    ========================================================== */
 @media screen and (max-width: 768px) {
     body.flores-page {
-        /* En celular hacemos que la imagen cubra bien la pantalla sin deformarse */
         background-size: cover;
         background-position: center top; 
-        align-items: flex-end; /* Manda la tarjeta hacia abajo para que el ramo luzca arriba */
+        align-items: flex-end; /* Manda la tarjeta abajo para dejar ver el ramo arriba */
         padding: 15px;
     }
 
     .about-section {
-        padding: 20px; /* Reducimos el espacio interno para que sea más compacta */
+        padding: 20px; 
         margin-top: 0;
         border-radius: 18px;
     }
 
     .about-section h2 {
-        font-size: 1.4rem; /* Título más pequeño y elegante para celulares */
+        font-size: 1.4rem; /* Reduce el tamaño del título en móviles */
     }
 
     .profile-content p {
-        font-size: 0.9rem; /* Texto más cómodo de leer en móvil */
+        font-size: 0.9rem; /* Texto más compacto para celulares */
         margin-bottom: 10px;
     }
 
